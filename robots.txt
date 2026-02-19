@@ -1,0 +1,65 @@
+# ============================================================
+# robots.txt — Kallol Chakrabarti · Honey Badger Researcher
+# https://helixoriginator.github.io/honey-badger-researcher/
+# ============================================================
+
+# Allow all search engine crawlers
+User-agent: *
+Allow: /
+
+# Primary sitemap
+Sitemap: https://helixoriginator.github.io/honey-badger-researcher/sitemap.xml
+
+# ── CRAWL RULES ──────────────────────────────────────────────
+
+# Allow major search bots explicitly
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# ── AI TRAINING CRAWLERS ─────────────────────────────────────
+# These crawlers scrape content for AI model training.
+# Kallol Chakrabarti retains full intellectual property rights
+# over all original concepts, frameworks, and methodologies.
+# Scraping for AI training purposes is not permitted.
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: cohere-ai
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+# ── HOST DECLARATION ─────────────────────────────────────────
+Host: https://helixoriginator.github.io/honey-badger-researcher/
