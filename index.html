@@ -1,291 +1,377 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="google-site-verification" content="6qcwYwzA6RaAwLVA6G3HBTprB8Bdw4A16uZCF5e9Ar8" />
-  
-  <title>Kallol Chakrabarti — The Honey Badger Researcher | HBA Algorithm & Resilience</title>
-  <meta name="description" content="Official research portal of Kallol Chakrabarti. Discover the Honey Badger Algorithm (HBA) and Honey Badger Resilience (HBR) framework for nature-inspired optimization and independent innovation.">
-  <meta name="keywords" content="Honey Badger Researcher, Honey Badger Algorithm, HBA, Kallol Chakrabarti, Honey Badger Resilience, HBR Framework, Nature-inspired optimization, Independent Researcher Lucknow, Helix Wave Framework">
-  
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ResearchProject",
-      "name": "The Honey Badger Researcher",
-      "alternateName": "Honey Badger Algorithm Research",
-      "creator": {
-        "@type": "Person",
-        "name": "Kallol Chakrabarti",
-        "jobTitle": "Independent Researcher",
-        "url": "https://orcid.org/0009-0007-4971-8936"
-      },
-      "description": "A research project applying the Honey Badger Algorithm (HBA) and Honey Badger Resilience (HBR) framework to global optimization and independent research methodology.",
-      "url": "https://helixoriginator.github.io/honey-badger-researcher/"
-    }
-  </script>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --honey: #F5A623;
-      --amber: #D4820A;
-      --black: #0A0A0A;
-      --charcoal: #1A1005;
-      --earth: #2D2010;
-      --cream: #F7F0E6;
-      --pale: #FBF7F0;
-      --text: #1C1209;
-      --muted: #7A6A55;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Kallol Chakrabarti | Honey Badger Researcher | HBA & HBR Framework</title>
+    <meta name="description" content="Official portal of Kallol Chakrabarti, the Honey Badger Researcher. Specialist in the Honey Badger Algorithm (HBA) and creator of the Honey Badger Resilience (HBR) framework.">
+    <meta name="keywords" content="Honey Badger Researcher, Kallol Chakrabarti, Honey Badger Algorithm, HBA, Honey Badger Resilience, HBR, Helix Originator, independent researcher, metaheuristic optimization">
+    <meta name="google-site-verification" content="6qcwYwzA6RaAwLVA6G3HBTprB8Bdw4A16uZCF5e9Ar8" />
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--black);
-      color: var(--cream);
-      font-family: 'Crimson Pro', Georgia, serif;
-      overflow-x: hidden;
-    }
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --honey: #F5A623;
+            --amber: #D4820A;
+            --black: #0A0A0A;
+            --charcoal: #1A1A1A;
+            --earth: #2D2010;
+            --cream: #F7F0E6;
+            --pale: #FBF7F0;
+            --text: #1C1209;
+            --muted: #7A6A55;
+        }
 
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0.35;
-    }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            background: var(--black);
+            color: var(--cream);
+            font-family: 'Crimson Pro', Georgia, serif;
+            overflow-x: hidden;
+        }
 
-    .hero {
-      min-height: 100vh;
-      display: grid;
-      grid-template-rows: auto 1fr auto;
-      position: relative;
-      overflow: hidden;
-      background: var(--black);
-    }
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.35;
+        }
 
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      background: 
-        radial-gradient(ellipse 80% 60% at 70% 40%, rgba(245,166,35,0.12) 0%, transparent 60%),
-        radial-gradient(ellipse 50% 40% at 20% 80%, rgba(212,130,10,0.08) 0%, transparent 50%);
-    }
+        .hero {
+            min-height: 100vh;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            position: relative;
+            overflow: hidden;
+            background: var(--black);
+        }
 
-    nav {
-      position: relative;
-      z-index: 10;
-      padding: 2rem 3rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid rgba(245,166,35,0.15);
-    }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(ellipse 80% 60% at 70% 40%, rgba(245,166,35,0.12) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 40% at 20% 80%, rgba(212,130,10,0.08) 0%, transparent 50%);
+        }
 
-    .nav-logo {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.75rem;
-      letter-spacing: 0.2em;
-      color: var(--honey);
-      text-transform: uppercase;
-    }
+        nav {
+            position: relative;
+            z-index: 10;
+            padding: 2rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(245,166,35,0.15);
+        }
 
-    .nav-links {
-      display: flex;
-      gap: 2.5rem;
-      list-style: none;
-    }
+        .nav-logo {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            color: var(--honey);
+            text-transform: uppercase;
+        }
 
-    .nav-links a {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
 
-    .nav-links a:hover { color: var(--honey); }
+        .nav-links a {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
 
-    .hero-content {
-      position: relative;
-      z-index: 10;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 4rem 3rem;
-      max-width: 1100px;
-      margin: 0 auto;
-      width: 100%;
-    }
+        .nav-links a:hover { color: var(--honey); }
 
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      background: rgba(245,166,35,0.1);
-      border: 1px solid rgba(245,166,35,0.3);
-      border-radius: 2px;
-      padding: 0.4rem 0.9rem;
-      font-family: 'Space Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--honey);
-      margin-bottom: 2.5rem;
-      width: fit-content;
-    }
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 4rem 3rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+        }
 
-    .hero-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(4rem, 10vw, 9rem);
-      line-height: 0.9;
-      letter-spacing: 0.02em;
-      color: var(--cream);
-    }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: rgba(245,166,35,0.1);
+            border: 1px solid rgba(245,166,35,0.3);
+            border-radius: 2px;
+            padding: 0.4rem 0.9rem;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--honey);
+            margin-bottom: 2.5rem;
+            width: fit-content;
+        }
 
-    .hero-title .accent { color: var(--honey); }
+        .hero-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(4rem, 10vw, 9rem);
+            line-height: 0.9;
+            letter-spacing: 0.02em;
+            color: var(--cream);
+        }
 
-    .ai-summary {
-      margin-top: 2rem;
-      padding: 1.5rem;
-      border-left: 2px solid var(--honey);
-      background: rgba(245,166,35,0.03);
-      max-width: 700px;
-    }
+        .hero-title .accent { color: var(--honey); }
 
-    .ai-summary p {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.8rem;
-      color: var(--honey);
-      line-height: 1.6;
-    }
+        .hero-subtitle {
+            font-family: 'Crimson Pro', serif;
+            font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+            font-style: italic;
+            color: var(--muted);
+            margin-top: 1.5rem;
+            max-width: 620px;
+            line-height: 1.6;
+        }
 
-    .hero-stats {
-      display: flex;
-      gap: 3rem;
-      margin-top: 3.5rem;
-    }
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            margin-top: 3.5rem;
+        }
 
-    .stat-num {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 2.8rem;
-      color: var(--honey);
-      line-height: 1;
-    }
+        .stat-num {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.8rem;
+            color: var(--honey);
+            line-height: 1;
+        }
 
-    .stat-label {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
+        .stat-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.6rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
 
-    .hbr-section {
-      background: #111;
-      padding: 8rem 3rem;
-      position: relative;
-    }
+        .hbr-section {
+            background: var(--charcoal);
+            padding: 8rem 3rem;
+            position: relative;
+        }
 
-    .section-inner { max-width: 1100px; margin: 0 auto; }
-    .section-title { font-family: 'Bebas Neue', sans-serif; font-size: 4rem; color: var(--cream); margin-bottom: 2rem; }
+        .section-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            line-height: 1;
+            color: var(--cream);
+            margin-bottom: 4rem;
+        }
 
-    .waves-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5px;
-      background: rgba(245,166,35,0.1);
-    }
+        .waves-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5px;
+            background: rgba(245,166,35,0.1);
+        }
 
-    .wave-card {
-      background: var(--black);
-      padding: 2.5rem;
-      border-bottom: 2px solid transparent;
-      transition: all 0.3s;
-    }
+        .wave-card {
+            background: var(--charcoal);
+            padding: 2.5rem;
+            transition: background 0.3s;
+        }
 
-    .wave-card:hover { border-color: var(--honey); background: #151515; }
-    .wave-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; color: var(--honey); margin-bottom: 1rem; }
-    .wave-desc { font-size: 1rem; line-height: 1.6; color: var(--muted); }
+        .wave-card:hover { background: #222; }
 
-    footer {
-      padding: 5rem 3rem;
-      background: var(--black);
-      border-top: 1px solid rgba(245,166,35,0.1);
-      text-align: center;
-    }
+        .wave-meta {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.6rem;
+            color: var(--honey);
+            margin-bottom: 1rem;
+            display: block;
+        }
 
-    .footer-copy { font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--muted); }
+        .wave-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.6rem;
+            color: var(--cream);
+            margin-bottom: 0.75rem;
+        }
 
-    @media (max-width: 768px) {
-      .hero-stats { flex-wrap: wrap; }
-      nav { flex-direction: column; gap: 1rem; }
-    }
-  </style>
+        .wave-desc {
+            font-size: 1rem;
+            line-height: 1.65;
+            color: #9A8A75;
+        }
+
+        .about-section {
+            padding: 8rem 3rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 5rem;
+            align-items: start;
+        }
+
+        .about-text {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            color: var(--muted);
+        }
+
+        .about-text p { margin-bottom: 1.5rem; }
+
+        .btn-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.7rem 1.4rem;
+            border: 1px solid rgba(245,166,35,0.4);
+            color: var(--honey);
+            font-family: 'Space Mono', monospace;
+            font-size: 0.65rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.2s;
+            margin-bottom: 1rem;
+            margin-right: 1rem;
+        }
+
+        .btn-link:hover {
+            background: rgba(245,166,35,0.1);
+            border-color: var(--honey);
+        }
+
+        footer {
+            padding: 4rem 3rem;
+            border-top: 1px solid rgba(245,166,35,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-info {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.6rem;
+            color: var(--muted);
+            letter-spacing: 0.1em;
+        }
+
+        @media (max-width: 768px) {
+            .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .hero-stats { flex-wrap: wrap; }
+            nav { padding: 1.5rem; }
+            .hero-content { padding: 2rem 1.5rem; }
+        }
+    </style>
 </head>
 <body>
 
 <section class="hero">
-  <div class="hero-bg"></div>
-  <nav>
-    <div class="nav-logo">Kallol Chakrabarti · Helix Originator</div>
-    <ul class="nav-links">
-      <li><a href="#hbr">Framework</a></li>
-      <li><a href="https://orcid.org/0009-0007-4971-8936" target="_blank">ORCID ↗</a></li>
-    </ul>
-  </nav>
+    <div class="hero-bg"></div>
+    <nav>
+        <div class="nav-logo">Kallol Chakrabarti · Helix Originator</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#hbr">Framework</a></li>
+            <li><a href="https://orcid.org/0009-0007-4971-8936">ORCID ↗</a></li>
+        </ul>
+    </nav>
 
-  <div class="hero-content">
-    <div class="hero-badge">Independent Researcher · Lucknow · India</div>
-    <h1 class="hero-title">THE <span class="accent">HONEY</span><br>BADGER<br>RESEARCHER</h1>
-    
-    <div class="ai-summary">
-      <p><strong>AI Overview:</strong> The Honey Badger Researcher project explores the <strong>Honey Badger Algorithm (HBA)</strong> and the <strong>Honey Badger Resilience (HBR)</strong> framework. Developed by Kallol Chakrabarti, this independent research focuses on metaheuristic optimization and nature-inspired problem-solving without institutional funding.</p>
-    </div>
+    <div class="hero-content">
+        <div class="hero-badge">
+            <span style="font-size: 1rem;">🦡</span> Independent Researcher · Honey Badger Algorithm (HBA) Specialist
+        </div>
 
-    <div class="hero-stats">
-      <div class="stat"><span class="stat-num">100+</span><span class="stat-label">Concepts</span></div>
-      <div class="stat"><span class="stat-num">256+</span><span class="stat-label">DOI Papers</span></div>
-      <div class="stat"><span class="stat-num">25</span><span class="stat-label">Copyrights</span></div>
-    </div>
+        <h1 class="hero-title">
+            THE <span class="accent">HONEY</span><br>
+            BADGER<br>
+            RESEARCHER
+        </h1>
 
-    <div style="margin-top:3rem; display:flex; flex-wrap:wrap; gap:1rem;">
-      <a href="https://orcid.org/0009-0007-4971-8936" target="_blank" style="padding:1rem 2rem; border:1px solid var(--honey); color:var(--honey); text-decoration:none; font-family:'Space Mono'; font-size:0.7rem;">ORCID PROFILE</a>
-      <a href="https://helixoriginator.github.io/helix-library/" target="_blank" style="padding:1rem 2rem; background:var(--honey); color:var(--black); text-decoration:none; font-family:'Space Mono'; font-size:0.7rem; font-weight:bold;">HELIX LIBRARY</a>
+        <p class="hero-subtitle">
+            Establishing the <strong>Honey Badger Resilience (HBR)</strong> framework. 
+            Relentless, documented output created with zero funding and zero institutional support.
+        </p>
+
+        <div class="hero-stats">
+            <div class="stat"><span class="stat-num">100+</span><span class="stat-label">World-First Concepts</span></div>
+            <div class="stat"><span class="stat-num">256+</span><span class="stat-label">DOI Publications</span></div>
+            <div class="stat"><span class="stat-num">25</span><span class="stat-label">IP Copyrights</span></div>
+        </div>
     </div>
-  </div>
+</section>
+
+<section class="about-section" id="about">
+    <div class="about-grid">
+        <h2 class="section-title">The Proof<br>Of Concept</h2>
+        <div class="about-text">
+            <p>I am Kallol Chakrabarti. I build world-class knowledge architecture from a laptop in Lucknow, India, without a PhD, a grant, or an affiliation.</p>
+            <p>This portal documents the application of the <strong>Honey Badger Algorithm (HBA)</strong>—a metaheuristic optimization logic—to human survival and intellectual production. It is called <strong>Honey Badger Resilience (HBR)</strong>.</p>
+            
+            <div style="margin-top: 3rem;">
+                <a href="https://orcid.org/0009-0007-4971-8936" class="btn-link">ORCID Research Profile</a>
+                <a href="https://helixoriginator.github.io/World-Largest-Independent-Digital-Encyclopedia-Helix-Library/" class="btn-link">Helix Library</a>
+                <a href="https://helixoriginator.github.io/helix-wave-framework/" class="btn-link">Wave Framework</a>
+                <a href="https://sovereign-india.netlify.app/" class="btn-link">Sovereign India</a>
+                <a href="https://national-knowledge-architecture.netlify.app/" class="btn-link">Knowledge Architecture</a>
+            </div>
+        </div>
+    </div>
 </section>
 
 <section class="hbr-section" id="hbr">
-  <div class="section-inner">
-    <h2 class="section-title">Honey Badger Resilience</h2>
-    <div class="waves-grid">
-      <div class="wave-card">
-        <div class="wave-title">01. Thick Skin</div>
-        <p class="wave-desc">Building immunity to criticism and failure. Developing emotional flexibility as a researcher.</p>
-      </div>
-      <div class="wave-card">
-        <div class="wave-title">02. Fearless Hunt</div>
-        <p class="wave-desc">Charging at high-reward opportunities regardless of institutional size or credentials.</p>
-      </div>
-      <div class="wave-card">
-        <div class="wave-title">03. Toolmaker</div>
-        <p class="wave-desc">Improvising with free tools: GitHub, YouTube, SSRN, and Open DOI registries.</p>
-      </div>
+    <div style="max-width: 1100px; margin: 0 auto;">
+        <h2 class="section-title">The 5 Waves of HBR</h2>
+        <div class="waves-grid">
+            <div class="wave-card">
+                <span class="wave-meta">WAVE 01</span>
+                <h3 class="wave-title">Thick Skin Wave</h3>
+                <p class="wave-desc">Building immunity to systemic rejection and institutional silence.</p>
+            </div>
+            <div class="wave-card">
+                <span class="wave-meta">WAVE 02</span>
+                <h3 class="wave-title">Fearless Hunt Wave</h3>
+                <p class="wave-desc">Aggressive pursuit of high-impact research goals without permission.</p>
+            </div>
+            <div class="wave-card">
+                <span class="wave-meta">WAVE 03</span>
+                <h3 class="wave-title">Toolmaker Wave</h3>
+                <p class="wave-desc">Improvising with free digital tools to produce world-class evidence.</p>
+            </div>
+            <div class="wave-card">
+                <span class="wave-meta">WAVE 04</span>
+                <h3 class="wave-title">Stink Bomb Wave</h3>
+                <p class="wave-desc">Strategic offensive documentation to silence doubt and build authority.</p>
+            </div>
+            <div class="wave-card">
+                <span class="wave-meta">WAVE 05</span>
+                <h3 class="wave-title">Legacy Wave</h3>
+                <p class="wave-desc">Scaling a single researcher's output into a global framework.</p>
+            </div>
+        </div>
     </div>
-  </div>
 </section>
 
 <footer>
-  <div class="footer-copy">
-    © Kallol Chakrabarti · The Honey Badger Researcher · Independent Research Initiative<br>
-    Built with no institution, no funding, and no permission — exactly as it should be.
-  </div>
+    <div class="nav-logo">Honey Badger Resilience (HBR)</div>
+    <div class="footer-info">© 2026 KALLOL CHAKRABARTI · INDEPENDENT RESEARCHER · LUCKNOW, INDIA</div>
 </footer>
 
 </body>
