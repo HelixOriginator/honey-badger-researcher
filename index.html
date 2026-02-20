@@ -15,119 +15,519 @@
   html { scroll-behavior: smooth; }
   body { background: var(--black); color: var(--cream); font-family: 'Crimson Pro', Georgia, serif; overflow-x: hidden; }
   body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; opacity: 0.35; }
+
+  /* ── HERO ── */
   .hero { min-height: 100vh; display: grid; grid-template-rows: auto 1fr auto; position: relative; overflow: hidden; background: var(--black); }
   .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 70% 40%, rgba(245,166,35,0.12) 0%, transparent 60%), radial-gradient(ellipse 50% 40% at 20% 80%, rgba(212,130,10,0.08) 0%, transparent 50%); }
-  nav { position: relative; z-index: 10; padding: 2rem 3rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(245,166,35,0.15); }
+  nav { position: relative; z-index: 10; padding: 2rem 3rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(245,166,35,0.15); flex-wrap: wrap; gap: 1rem; }
   .nav-logo { font-family: 'Space Mono', monospace; font-size: 0.75rem; letter-spacing: 0.2em; color: var(--honey); text-transform: uppercase; }
-  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-  .nav-links a { font-family: 'Space Mono', monospace; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; flex-wrap: wrap; }
+  .nav-links a { font-family: 'Space Mono', monospace; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; position: relative; z-index: 10; }
   .nav-links a:hover { color: var(--honey); }
   .hero-content { position: relative; z-index: 10; display: flex; flex-direction: column; justify-content: center; padding: 4rem 3rem; max-width: 1100px; margin: 0 auto; width: 100%; }
   .hero-badge { display: inline-flex; align-items: center; gap: 0.6rem; background: rgba(245,166,35,0.1); border: 1px solid rgba(245,166,35,0.3); border-radius: 2px; padding: 0.4rem 0.9rem; font-family: 'Space Mono', monospace; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--honey); margin-bottom: 2.5rem; width: fit-content; }
   .hero-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(4rem, 10vw, 9rem); line-height: 0.9; letter-spacing: 0.02em; color: var(--cream); }
   .hero-title .accent { color: var(--honey); }
   .hero-subtitle { font-family: 'Crimson Pro', serif; font-size: clamp(1.1rem, 2.5vw, 1.6rem); font-style: italic; color: var(--muted); margin-top: 1.5rem; max-width: 620px; line-height: 1.6; }
-  
-  /* STYLES FOR FEATURED PUBLICATION SECTION */
-  .featured-pub { background: #0F0F0F; padding: 6rem 3rem; border-top: 1px solid rgba(245,166,35,0.1); }
-  .pub-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
-  .pub-meta { font-family: 'Space Mono', monospace; font-size: 0.65rem; color: var(--honey); text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 1rem; }
-  .pub-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.1; margin-bottom: 2rem; color: var(--cream); }
-  .pub-body { font-size: 1.1rem; line-height: 1.7; color: var(--muted); }
-  .pub-body b { color: var(--honey); }
-  .theme-tag { display: inline-block; padding: 0.4rem 0.8rem; border: 1px solid rgba(245,166,35,0.2); font-family: 'Space Mono', monospace; font-size: 0.6rem; margin-right: 0.5rem; margin-top: 1rem; color: var(--muted); }
-  
-  .hbr-section { background: var(--charcoal); padding: 8rem 3rem; position: relative; }
-  .section-inner { max-width: 1100px; margin: 0 auto; }
+  .hero-stats { display: flex; gap: 3rem; margin-top: 3.5rem; flex-wrap: wrap; }
+  .stat { display: flex; flex-direction: column; gap: 0.25rem; }
+  .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 2.8rem; color: var(--honey); line-height: 1; }
+  .stat-label { font-family: 'Space Mono', monospace; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); }
+  .quick-links { margin-top: 3rem; display: flex; flex-wrap: wrap; gap: 0.8rem; }
+  .quick-links a { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.7rem 1.4rem; border: 1px solid rgba(245,166,35,0.4); color: var(--honey); font-family: 'Space Mono', monospace; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; position: relative; z-index: 10; }
+  .quick-links a:hover { background: rgba(245,166,35,0.1); }
+  .hero-scroll { position: relative; z-index: 10; padding: 2rem 3rem; display: flex; align-items: center; gap: 1rem; }
+  .scroll-line { width: 40px; height: 1px; background: rgba(245,166,35,0.4); }
+  .scroll-text { font-family: 'Space Mono', monospace; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+
+  /* ── SHARED ── */
+  .section-label { font-family: 'Space Mono', monospace; font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--honey); margin-bottom: 1.5rem; }
   .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 6vw, 5rem); line-height: 1; color: var(--cream); margin-bottom: 1.5rem; }
+  .section-intro { font-size: 1.25rem; line-height: 1.7; color: var(--muted); max-width: 680px; margin-bottom: 4rem; font-style: italic; }
+
+  /* ── FEATURED PUBLICATIONS ── */
+  .featured-pub { background: #0D0D0D; padding: 7rem 3rem; border-top: 1px solid rgba(245,166,35,0.12); }
+  .featured-pub-inner { max-width: 1100px; margin: 0 auto; }
+  .pub-number-tag { background: rgba(245,166,35,0.08); border: 1px solid rgba(245,166,35,0.2); padding: 0.6rem 1.5rem; display: inline-block; margin-bottom: 0; }
+  .pub-number-tag span { font-family: 'Space Mono', monospace; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--honey); }
+  .pub-card { border: 1px solid rgba(245,166,35,0.2); background: #111; display: grid; grid-template-columns: 1fr 1fr; }
+  .pub-card-left { padding: 3rem; border-right: 1px solid rgba(245,166,35,0.1); }
+  .pub-card-right { padding: 3rem; display: flex; flex-direction: column; justify-content: space-between; }
+  .pub-meta { font-family: 'Space Mono', monospace; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--honey); margin-bottom: 1rem; }
+  .pub-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(1.5rem, 3vw, 2.4rem); line-height: 1.1; margin-bottom: 1rem; color: var(--cream); }
+  .pub-subtitle { font-family: 'Crimson Pro', serif; font-style: italic; font-size: 1rem; color: #5A4A35; margin-bottom: 1.5rem; }
+  .pub-body { font-size: 1.05rem; line-height: 1.75; color: #9A8A75; }
+  .pub-body p + p { margin-top: 1.2rem; }
+  .pub-body b { color: var(--cream); }
+  .pub-body em { color: var(--honey); font-style: italic; }
+  .pub-quote { margin-top: 1.2rem; padding: 1rem 1.2rem; background: rgba(245,166,35,0.06); border-left: 3px solid var(--honey); font-style: italic; color: #9A8A75; font-size: 1rem; line-height: 1.6; }
+  .theme-tag { display: inline-block; padding: 0.4rem 0.8rem; border: 1px solid rgba(245,166,35,0.2); font-family: 'Space Mono', monospace; font-size: 0.6rem; margin-right: 0.5rem; margin-top: 0.75rem; color: var(--muted); }
+  .pub-stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(245,166,35,0.08); margin-bottom: 1.2rem; }
+  .pub-stat { background: #111; padding: 1rem; text-align: center; }
+  .pub-stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--honey); line-height: 1; }
+  .pub-stat-label { font-family: 'Space Mono', monospace; font-size: 0.55rem; letter-spacing: 0.12em; text-transform: uppercase; color: #5A4A35; margin-top: 0.3rem; }
+  .pub-info-box { background: rgba(245,166,35,0.06); border: 1px solid rgba(245,166,35,0.15); padding: 1rem 1.2rem; margin-bottom: 1rem; }
+  .pub-info-label { font-family: 'Space Mono', monospace; font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--honey); margin-bottom: 0.4rem; }
+  .pub-info-val { font-family: 'Space Mono', monospace; font-size: 0.75rem; color: #9A8A75; }
+  .pub-originality-box { padding: 1.2rem; background: rgba(245,166,35,0.06); border: 1px solid rgba(245,166,35,0.15); margin-bottom: 1px; }
+  .pub-originality-label { font-family: 'Space Mono', monospace; font-size: 0.6rem; color: var(--honey); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.4rem; }
+  .pub-originality-text { font-size: 0.95rem; color: #7A6A55; line-height: 1.5; }
+  .pub-btn { display: block; text-align: center; padding: 1rem 2rem; background: var(--honey); color: var(--black); font-family: 'Space Mono', monospace; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; position: relative; z-index: 10; margin-top: 1.5rem; }
+  .pub-btn:hover { background: var(--amber); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(245,166,35,0.3); }
+  .pub-themes { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(245,166,35,0.08); margin-top: 1px; margin-bottom: 5rem; }
+  .pub-theme { background: #111; padding: 1.2rem; text-align: center; }
+  .pub-theme-label { font-family: 'Space Mono', monospace; font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--honey); margin-bottom: 0.4rem; }
+  .pub-theme-val { font-size: 0.9rem; color: #7A6A55; }
+
+  /* ── HBR FRAMEWORK ── */
+  .hbr-section { background: var(--charcoal); padding: 8rem 3rem; position: relative; overflow: hidden; }
+  .hbr-section::before { content: 'HBR'; position: absolute; right: -2rem; top: 50%; transform: translateY(-50%); font-family: 'Bebas Neue', sans-serif; font-size: 20rem; color: rgba(245,166,35,0.03); pointer-events: none; line-height: 1; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+  .waves-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5px; background: rgba(245,166,35,0.1); border: 1px solid rgba(245,166,35,0.1); }
+  .wave-card { background: var(--charcoal); padding: 2.5rem; position: relative; overflow: hidden; transition: background 0.3s; }
+  .wave-card:hover { background: #222; }
+  .wave-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--honey); transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease; }
+  .wave-card:hover::after { transform: scaleX(1); }
+  .wave-num { font-family: 'Bebas Neue', sans-serif; font-size: 4rem; color: rgba(245,166,35,0.15); line-height: 1; margin-bottom: 1rem; }
+  .wave-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 0.05em; color: var(--honey); margin-bottom: 0.75rem; }
+  .wave-desc { font-size: 1rem; line-height: 1.65; color: #9A8A75; }
+  .wave-action { margin-top: 1.5rem; font-family: 'Space Mono', monospace; font-size: 0.65rem; letter-spacing: 0.1em; color: var(--honey); }
+  .wave-action::before { content: '→ '; }
+
+  /* ── CONCEPTS ── */
+  .concepts-section { background: var(--earth); padding: 8rem 3rem; }
   .concepts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1px; background: rgba(245,166,35,0.08); margin-top: 4rem; }
-  .concept-tag { background: #1A1005; padding: 1.5rem; font-size: 0.95rem; color: #8A7A65; border-bottom: 1px solid rgba(245,166,35,0.05); }
+  .concept-tag { background: #1A1005; padding: 1.5rem; font-size: 0.95rem; color: #8A7A65; border-bottom: 1px solid rgba(245,166,35,0.05); transition: all 0.2s; position: relative; overflow: hidden; }
+  .concept-tag::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: var(--honey); transform: scaleY(0); transition: transform 0.3s; }
+  .concept-tag:hover { background: #1F1508; color: var(--cream); padding-left: 1.8rem; }
+  .concept-tag:hover::before { transform: scaleY(1); }
   .concept-category { font-family: 'Space Mono', monospace; font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--amber); margin-bottom: 0.4rem; }
+
+  /* ── MANIFESTO ── */
+  .manifesto-section { background: var(--honey); padding: 8rem 3rem; position: relative; overflow: hidden; }
+  .manifesto-section::before { content: '"'; position: absolute; left: -2rem; top: -3rem; font-family: 'Bebas Neue', sans-serif; font-size: 30rem; color: rgba(0,0,0,0.06); line-height: 1; pointer-events: none; }
+  .manifesto-inner { max-width: 800px; margin: 0 auto; text-align: center; position: relative; z-index: 1; }
+  .manifesto-text { font-family: 'Crimson Pro', serif; font-size: clamp(1.5rem, 4vw, 2.8rem); font-style: italic; line-height: 1.4; color: var(--black); margin-bottom: 3rem; }
+  .manifesto-lines { list-style: none; display: flex; flex-direction: column; gap: 1rem; text-align: left; max-width: 600px; margin: 0 auto; }
+  .manifesto-line { display: flex; gap: 1rem; align-items: flex-start; font-size: 1.05rem; color: rgba(0,0,0,0.75); line-height: 1.5; }
+  .manifesto-line::before { content: '✦'; color: var(--black); font-size: 0.7rem; margin-top: 0.3rem; flex-shrink: 0; }
+
+  /* ── FOR YOU ── */
+  .foryou-section { background: var(--charcoal); padding: 8rem 3rem; }
+  .audience-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(245,166,35,0.1); margin-top: 4rem; }
+  .audience-card { background: var(--charcoal); padding: 3rem 2.5rem; text-align: center; transition: background 0.2s; }
+  .audience-card:hover { background: #222; }
+  .audience-icon { font-size: 2.5rem; margin-bottom: 1.5rem; }
+  .audience-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 0.05em; color: var(--honey); margin-bottom: 1rem; }
+  .audience-desc { font-size: 0.95rem; line-height: 1.65; color: #7A6A55; }
+
+  /* ── LIVE PROJECTS ── */
+  .projects-section { background: #111; padding: 6rem 3rem; border-top: 1px solid rgba(245,166,35,0.1); }
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1px; background: rgba(245,166,35,0.08); margin-top: 3rem; }
+  .project-card { background: #0F0F0F; padding: 2.5rem; text-decoration: none; display: block; transition: background 0.2s; border-bottom: 2px solid transparent; position: relative; z-index: 10; }
+  .project-card:hover { background: #1A1A1A; border-bottom-color: var(--honey); }
+  .project-cat { font-family: 'Space Mono', monospace; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--honey); margin-bottom: 0.75rem; }
+  .project-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 0.05em; color: var(--cream); margin-bottom: 0.75rem; }
+  .project-desc { font-size: 0.95rem; line-height: 1.6; color: #7A6A55; }
+  .project-link { margin-top: 1.2rem; font-family: 'Space Mono', monospace; font-size: 0.65rem; color: var(--honey); }
+
+  /* ── FOOTER ── */
   footer { background: var(--black); border-top: 1px solid rgba(245,166,35,0.1); padding: 4rem 3rem; }
+  .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-end; gap: 3rem; flex-wrap: wrap; }
+  .footer-title { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--honey); letter-spacing: 0.05em; }
+  .footer-sub { font-family: 'Space Mono', monospace; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-top: 0.5rem; }
+  .footer-links { display: flex; flex-direction: column; gap: 0.5rem; text-align: right; }
+  .footer-links a { font-family: 'Space Mono', monospace; font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; position: relative; z-index: 10; }
+  .footer-links a:hover { color: var(--honey); }
+  .footer-copy { width: 100%; font-family: 'Space Mono', monospace; font-size: 0.6rem; color: rgba(255,255,255,0.15); letter-spacing: 0.1em; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 2rem; margin-top: 2rem; }
+
+  /* ── REVEAL ── */
+  .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav { padding: 1.5rem; }
+    .hero-content { padding: 3rem 1.5rem; }
+    .hero-stats { gap: 2rem; }
+    .pub-card { grid-template-columns: 1fr; }
+    .pub-card-left { border-right: none; border-bottom: 1px solid rgba(245,166,35,0.1); }
+    .pub-themes { grid-template-columns: repeat(2,1fr); }
+    .audience-grid { grid-template-columns: 1fr; }
+    .featured-pub,.hbr-section,.concepts-section,.manifesto-section,.foryou-section,.projects-section,footer { padding: 5rem 1.5rem; }
+  }
 </style>
 </head>
 <body>
 
+<!-- ══ HERO ══ -->
 <section class="hero">
   <div class="hero-bg"></div>
   <nav>
     <div class="nav-logo">Kallol Chakrabarti · Helix Originator</div>
     <ul class="nav-links">
-      <li><a href="#featured">Featured</a></li>
+      <li><a href="#featured">Publications</a></li>
+      <li><a href="#hbr">HBR Framework</a></li>
       <li><a href="#concepts">Concepts</a></li>
-      <li><a href="https://orcid.org/0009-0007-4971-8936">ORCID ↗</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#foryou">For You</a></li>
+      <li><a href="https://orcid.org/0009-0007-4971-8936" target="_blank">ORCID ↗</a></li>
     </ul>
   </nav>
 
   <div class="hero-content">
-    <div class="hero-badge">Independent Researcher · Lucknow · Lucknow</div>
+    <div class="hero-badge">Independent Researcher · 50+ · Zero Institutional Support · Lucknow, India</div>
     <h1 class="hero-title">THE <span class="accent">HONEY</span><br>BADGER<br>RESEARCHER</h1>
-    <p class="hero-subtitle">What happens when one person creates over 100 world-first concepts from a laptop, alone?</p>
+    <p class="hero-subtitle">What happens when one person, with no funding, no institution, no network — creates over 100 world-first concepts from a laptop, alone?</p>
+
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">100+</span><span class="stat-label">World-First Concepts</span></div>
+      <div class="stat"><span class="stat-num">256+</span><span class="stat-label">DOI Publications</span></div>
+      <div class="stat"><span class="stat-num">5,000+</span><span class="stat-label">Downloads</span></div>
+      <div class="stat"><span class="stat-num">25</span><span class="stat-label">Copyrights</span></div>
+    </div>
+
+    <div class="quick-links">
+      <a href="https://orcid.org/0009-0007-4971-8936" target="_blank">🔗 ORCID Profile</a>
+      <a href="https://helixoriginator.github.io/World-Largest-Independent-Digital-Encyclopedia-Helix-Library/" target="_blank">📚 Helix Library</a>
+      <a href="https://helixoriginator.github.io/helix-wave-framework/" target="_blank">🌊 Wave Framework</a>
+      <a href="https://helixoriginator.github.io/Pioneer-Frameworks-Kallol-Chakrabarti/" target="_blank">🏅 Pioneer Frameworks</a>
+      <a href="https://sovereign-india.netlify.app/" target="_blank">🌍 Sovereign India</a>
+      <a href="https://national-knowledge-architecture.netlify.app/" target="_blank">🏛️ Knowledge Architecture</a>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span class="scroll-text">Scroll to explore</span>
   </div>
 </section>
 
+<!-- ══ FEATURED PUBLICATIONS ══ -->
 <section class="featured-pub" id="featured">
-  <div class="pub-grid">
-    <div>
-      <div class="pub-meta">Featured Publication · Zenodo · DOI: 10.5281/zenodo.17002411</div>
-      <h2 class="pub-title">Decolonizing Knowledge: From Zenodo to YouTube University</h2>
-      <div class="pub-body">
-        <p>This paper proposes the <b>Helix Originator framework</b> as both a technological innovation and an ethical intervention — formalizing <b>YouTube University</b> as a credible, decentralized model for knowledge validation.</p>
-        <p style="margin-top:1.5rem;">This is not educational reform. This is <b>epistemic justice</b>.</p>
+  <div class="featured-pub-inner">
+    <div class="section-label reveal">Featured Publications</div>
+    <h2 class="section-title reveal">Landmark<br>Research</h2>
+    <p class="section-intro reveal">Original, open-access, DOI-linked research published on Zenodo — indexed globally, created independently, with zero institutional support.</p>
+
+    <!-- PUB 01 -->
+    <div class="pub-number-tag reveal"><span>Publication 01 · August 2025</span></div>
+    <div class="pub-card reveal">
+      <div class="pub-card-left">
+        <div class="pub-meta">Zenodo · DOI: 10.5281/zenodo.17002411 · Open Access CC BY 4.0</div>
+        <h3 class="pub-title">Helix Originator: Decolonizing Knowledge through Decentralized Academia</h3>
+        <p class="pub-subtitle">From Zenodo to YouTube University: Neutral Access and ASEAN Knowledge Sovereignty</p>
+        <div class="pub-body">
+          <p>Global academia is structurally rigged. Editorial gatekeeping, methodological imperialism, linguistic exclusion, and prohibitive publication fees systematically shut out scholars from the Global South — especially independent researchers with no institutional affiliation.</p>
+          <p>This paper proposes the <b>Helix Originator framework</b> as both a technological innovation and an ethical intervention — formalizing <b>YouTube University</b> as a credible, decentralized, globally accessible model for knowledge validation that operates entirely outside hegemonic academic structures.</p>
+          <p>Integrating Decentralized Science (DeSci), AI-driven curation, blockchain-secured credentials, and persistent DOIs — it reimagines who gets to create knowledge, who validates it, and who benefits. This is not educational reform. This is <em>epistemic justice.</em></p>
+        </div>
+        <div style="margin-top:1.5rem;">
+          <span class="theme-tag">Epistemic Justice</span>
+          <span class="theme-tag">Decentralized Science</span>
+          <span class="theme-tag">YouTube University</span>
+          <span class="theme-tag">ASEAN Knowledge Sovereignty</span>
+          <span class="theme-tag">DeSci</span>
+          <span class="theme-tag">Blockchain Credentials</span>
+        </div>
       </div>
-      <div style="margin-top:2rem;">
-        <span class="theme-tag">Epistemic Justice</span>
-        <span class="theme-tag">Decentralized Science</span>
-        <span class="theme-tag">YouTube University</span>
-        <span class="theme-tag">ASEAN Knowledge Sovereignty</span>
+      <div class="pub-card-right">
+        <div>
+          <div class="pub-meta">Publication Record</div>
+          <div class="pub-stats-grid">
+            <div class="pub-stat"><div class="pub-stat-num">69</div><div class="pub-stat-label">Downloads</div></div>
+            <div class="pub-stat"><div class="pub-stat-num">37</div><div class="pub-stat-label">Views</div></div>
+            <div class="pub-stat"><div class="pub-stat-num">2025</div><div class="pub-stat-label">Published</div></div>
+            <div class="pub-stat"><div class="pub-stat-num">CC BY</div><div class="pub-stat-label">Open Access</div></div>
+          </div>
+          <div class="pub-info-box">
+            <div class="pub-info-label">DOI</div>
+            <div class="pub-info-val">10.5281/zenodo.17002411</div>
+          </div>
+          <div class="pub-info-box">
+            <div class="pub-info-label">Indexed In</div>
+            <div class="pub-info-val">Zenodo · OpenAIRE · CERN Data Centre</div>
+          </div>
+        </div>
+        <a href="https://zenodo.org/records/17002411" target="_blank" class="pub-btn">Read Full Paper on Zenodo →</a>
       </div>
     </div>
-    <div style="border-left: 1px solid rgba(245,166,35,0.1); padding-left: 4rem;">
-       <div class="pub-meta">Publication Record</div>
-       <div style="font-size:3rem; font-family:'Bebas Neue'; color:var(--honey);">2025</div>
-       <div style="color:var(--muted); font-family:'Space Mono'; font-size:0.7rem;">PUBLISHED YEAR</div>
-       <div style="margin-top:2rem;">
-         <a href="https://zenodo.org/records/17002411" target="_blank" style="color:var(--honey); text-decoration:none; font-family:'Space Mono'; font-size:0.8rem;">READ FULL PAPER ON ZENODO →</a>
-       </div>
+    <div class="pub-themes reveal" style="margin-bottom:5rem;">
+      <div class="pub-theme"><div class="pub-theme-label">Core Idea</div><div class="pub-theme-val">Epistemic Justice</div></div>
+      <div class="pub-theme"><div class="pub-theme-label">Method</div><div class="pub-theme-val">Decentralized Science</div></div>
+      <div class="pub-theme"><div class="pub-theme-label">Innovation</div><div class="pub-theme-val">YouTube University</div></div>
+      <div class="pub-theme"><div class="pub-theme-label">Focus</div><div class="pub-theme-val">ASEAN Knowledge Sovereignty</div></div>
     </div>
+
+    <!-- PUB 02 -->
+    <div class="pub-number-tag reveal"><span>Publication 02 · February 2026</span></div>
+    <div class="pub-card reveal">
+      <div class="pub-card-left">
+        <div class="pub-meta">Zenodo · DOI: 10.5281/zenodo.18498639 · Open Access CC BY 4.0</div>
+        <h3 class="pub-title">Dharma as a Universal Principle of Order</h3>
+        <p class="pub-subtitle">A Philosophical and Systemic Reinterpretation Beyond Religion, Morality, and Ritual</p>
+        <div class="pub-body">
+          <p>The term Dharma is frequently interpreted as synonymous with religion, morality, or cultural practice. Such interpretations restrict its conceptual scope — stripping it of its deeper, universal significance and confining it to a single tradition.</p>
+          <p>This paper proposes an alternative philosophical framework in which <b>Dharma is understood not as a religious system</b> but as a <b>universal principle of order, knowledge, balance, and functional responsibility.</b> By examining natural law, human behaviour, education, ritual practices, ethics, and cosmology, Dharma is redefined as the sustaining logic that maintains coherence within complex systems.</p>
+          <p>This reinterpretation positions Dharma as a <em>cross-cultural, analytical concept</em> as relevant to contemporary philosophy, modern science, and social theory as any Western framework — a bold decolonisation of universal thought.</p>
+          <div class="pub-quote">"Dharma is not a religion. It is the architecture of coherence — the logic by which natural systems, human institutions, and cosmic order maintain their integrity."</div>
+        </div>
+        <div style="margin-top:1.5rem;">
+          <span class="theme-tag">Universal Philosophy</span>
+          <span class="theme-tag">Dharma Reinterpretation</span>
+          <span class="theme-tag">Natural Law</span>
+          <span class="theme-tag">Cross-Cultural Theory</span>
+          <span class="theme-tag">Systemic Ethics</span>
+          <span class="theme-tag">Cosmology</span>
+        </div>
+      </div>
+      <div class="pub-card-right">
+        <div>
+          <div class="pub-meta">Why This Is Original</div>
+          <div style="margin-bottom:1.2rem;">
+            <div class="pub-originality-box">
+              <div class="pub-originality-label">Breaks Orthodoxy</div>
+              <div class="pub-originality-text">Redefines Dharma outside religion — applicable to physics, biology, governance, and social systems globally.</div>
+            </div>
+            <div class="pub-originality-box" style="margin-top:1px;">
+              <div class="pub-originality-label">Cross-Cultural Bridge</div>
+              <div class="pub-originality-text">Positions an ancient Indian concept as a universal analytical framework — not limited to Hinduism or South Asia.</div>
+            </div>
+            <div class="pub-originality-box" style="margin-top:1px;">
+              <div class="pub-originality-label">Decolonises Philosophy</div>
+              <div class="pub-originality-text">Challenges Western epistemic dominance by validating non-Western knowledge as rigorous, citable, global theory.</div>
+            </div>
+          </div>
+          <div class="pub-stats-grid">
+            <div class="pub-stat"><div class="pub-stat-num">16</div><div class="pub-stat-label">Downloads</div></div>
+            <div class="pub-stat"><div class="pub-stat-num">37</div><div class="pub-stat-label">Views</div></div>
+            <div class="pub-stat"><div class="pub-stat-num">2026</div><div class="pub-stat-label">Published</div></div>
+            <div class="pub-stat"><div class="pub-stat-num">CC BY</div><div class="pub-stat-label">Open Access</div></div>
+          </div>
+          <div class="pub-info-box">
+            <div class="pub-info-label">DOI</div>
+            <div class="pub-info-val">10.5281/zenodo.18498639</div>
+          </div>
+          <div class="pub-info-box">
+            <div class="pub-info-label">Indexed In</div>
+            <div class="pub-info-val">Zenodo · OpenAIRE · CERN Data Centre</div>
+          </div>
+        </div>
+        <a href="https://zenodo.org/records/18498639" target="_blank" class="pub-btn">Read Full Paper on Zenodo →</a>
+      </div>
+    </div>
+    <div class="pub-themes reveal">
+      <div class="pub-theme"><div class="pub-theme-label">Core Idea</div><div class="pub-theme-val">Universal Order</div></div>
+      <div class="pub-theme"><div class="pub-theme-label">Scope</div><div class="pub-theme-val">Cross-Cultural Philosophy</div></div>
+      <div class="pub-theme"><div class="pub-theme-label">Impact</div><div class="pub-theme-val">Decolonises Knowledge</div></div>
+      <div class="pub-theme"><div class="pub-theme-label">Field</div><div class="pub-theme-val">Philosophy · Social Theory</div></div>
+    </div>
+
   </div>
 </section>
 
-<section class="hbr-section" id="concepts">
+<!-- ══ HBR FRAMEWORK ══ -->
+<section class="hbr-section" id="hbr">
   <div class="section-inner">
-    <h2 class="section-title">The Body of Work</h2>
-    <div class="concepts-grid">
-      <div class="concept-tag">
-        <div class="concept-category">Core Methodology</div>
-        <strong>Kallol Wave Framework (Helix Wave Framework)</strong>
+    <div class="section-label reveal">Framework</div>
+    <h2 class="section-title reveal">Honey Badger<br>Resilience (HBR)</h2>
+    <p class="section-intro reveal">A structured, evidence-based model for fearless innovation when all conventional options are exhausted. Not about bouncing back — about <em>attacking forward.</em></p>
+    <div class="waves-grid">
+      <div class="wave-card reveal">
+        <div class="wave-num">01</div>
+        <div class="wave-title">Thick Skin Wave</div>
+        <p class="wave-desc">Build immunity to criticism and failure. Like the badger's loose hide that lets it twist free from predators, develop emotional flexibility — let setbacks slide off while extracting every lesson from them.</p>
+        <div class="wave-action">Reframe adversity as venom resistance training</div>
       </div>
-      <div class="concept-tag">
-        <div class="concept-category">Core Methodology</div>
-        <strong>Helix Thinking Methodology</strong>
+      <div class="wave-card reveal">
+        <div class="wave-num">02</div>
+        <div class="wave-title">Fearless Hunt Wave</div>
+        <p class="wave-desc">Charge at high-reward opportunities regardless of the obstacle's size. Honey badgers raid lion kills and beehives; Kallol targeted global institutions with zero credentials. Break impossible goals into micro-attacks.</p>
+        <div class="wave-action">Pitch to the top. Rejection costs nothing</div>
       </div>
-      <div class="concept-tag">
-        <div class="concept-category">Governance</div>
-        Civic Reflexivity Engines
+      <div class="wave-card reveal">
+        <div class="wave-num">03</div>
+        <div class="wave-title">Toolmaker Wave</div>
+        <p class="wave-desc">When trapped, improvise. Badgers use sticks and stones to escape enclosures. You have YouTube, SSRN, Amazon KDP, GitHub, Zenodo, and free DOI registries. Repurpose free tools to build world-class output.</p>
+        <div class="wave-action">A laptop and YouTube are enough</div>
       </div>
-      <div class="concept-tag">
-        <div class="concept-category">Ethics & Policy</div>
-        The Karma Index (KI) — ethical governance
+      <div class="wave-card reveal">
+        <div class="wave-num">04</div>
+        <div class="wave-title">Stink Bomb Wave</div>
+        <p class="wave-desc">Deploy a strategic "defensive offense." Share publicly, loudly, and evidentially. Release documented wins — ILO endorsements, CMO recognitions — to silence doubt and build community. Evidence is your armour.</p>
+        <div class="wave-action">Evidence is your armor. Publish everything</div>
+      </div>
+      <div class="wave-card reveal">
+        <div class="wave-num">05</div>
+        <div class="wave-title">Immortal Legacy Wave</div>
+        <p class="wave-desc">Evolve from a survivor into a symbol. The honey badger appears in folklore across Africa as the embodiment of courage. Your documented journey becomes a living proof-of-concept for every person shut out of the system.</p>
+        <div class="wave-action">Turn your story into a scalable framework</div>
+      </div>
+      <div class="wave-card reveal" style="background:rgba(245,166,35,0.06);border:1px solid rgba(245,166,35,0.2);">
+        <div class="wave-num" style="color:rgba(245,166,35,0.4);">∞</div>
+        <div class="wave-title" style="color:var(--cream);">The Kallol Proof</div>
+        <p class="wave-desc" style="color:#9A8A75;">No PhD. No salary. No institution. No grants. One independent researcher in Lucknow created a globally indexed body of work recognised by the Election Commission of India, the Assam CM's office, and ILO leadership.</p>
+        <div class="wave-action" style="color:var(--cream);">You are the living framework</div>
       </div>
     </div>
   </div>
 </section>
 
-<footer>
-  <div style="max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between;">
-    <div style="color:var(--muted); font-size:0.8rem;">
-      Honey Badger Resilience (HBR) · A Kallol Chakrabarti Framework
+<!-- ══ CONCEPTS ══ -->
+<section class="concepts-section" id="concepts">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div class="section-label reveal">100+ World-First Concepts</div>
+    <h2 class="section-title reveal">The Body of Work</h2>
+    <p class="section-intro reveal">Each concept was created independently, without a laboratory, team, or budget. Just deep observation, cross-disciplinary thinking, and relentless output.</p>
+    <div class="concepts-grid reveal">
+      <div class="concept-tag"><div class="concept-category">Core Methodology</div>Kallol Wave Framework (Helix Wave Framework)</div>
+      <div class="concept-tag"><div class="concept-category">Core Methodology</div>Helix Thinking Methodology</div>
+      <div class="concept-tag"><div class="concept-category">Core Methodology</div>Honey Badger Resilience (HBR) Framework</div>
+      <div class="concept-tag"><div class="concept-category">Governance</div>Civic Reflexivity Engines</div>
+      <div class="concept-tag"><div class="concept-category">Ethics & Policy</div>The Karma Index (KI) — ethical governance measurement</div>
+      <div class="concept-tag"><div class="concept-category">Governance</div>Vedic Quantum Policy Framework</div>
+      <div class="concept-tag"><div class="concept-category">Social Policy</div>TE-EHAS — Technology-Enabled Equitable Housing</div>
+      <div class="concept-tag"><div class="concept-category">Governance</div>SEPRS — Smart Encroachment Prevention</div>
+      <div class="concept-tag"><div class="concept-category">Social Unity</div>Bharat Ekta Mission</div>
+      <div class="concept-tag"><div class="concept-category">AI Security</div>EchoShield Nexus — Predictive Security Model</div>
+      <div class="concept-tag"><div class="concept-category">AI Ethics</div>Dharma-Driven AI Ethics Framework</div>
+      <div class="concept-tag"><div class="concept-category">Digital Identity</div>Helix Cultural ReSkin Engine</div>
+      <div class="concept-tag"><div class="concept-category">Economics</div>Financial Proxy Warfare Conceptual Model</div>
+      <div class="concept-tag"><div class="concept-category">Health & Education</div>MACN Protocol — Monsoon-Body Rhythm Synchronization</div>
+      <div class="concept-tag"><div class="concept-category">Social</div>Rajput Roots Navigator</div>
+      <div class="concept-tag"><div class="concept-category">Legal Access</div>Private Teacher Rights Ready Reckoner</div>
+      <div class="concept-tag"><div class="concept-category">Youth</div>Roots & Wings Ready Reckoner</div>
+      <div class="concept-tag"><div class="concept-category">Philosophy</div>Dharma as Universal Principle of Order</div>
+      <div class="concept-tag" style="display:flex;align-items:center;justify-content:center;text-align:center;color:rgba(245,166,35,0.3);font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:0.1em;">+ 80 MORE CONCEPTS</div>
     </div>
-    <div style="display:flex; gap:1.5rem;">
-      <a href="https://orcid.org/0009-0007-4971-8936" style="color:var(--honey); font-family:'Space Mono'; font-size:0.7rem; text-decoration:none;">ORCID</a>
-      <a href="https://helixoriginator.github.io/World-Largest-Independent-Digital-Encyclopedia-Helix-Library/" style="color:var(--honey); font-family:'Space Mono'; font-size:0.7rem; text-decoration:none;">Helix Library</a>
+  </div>
+</section>
+
+<!-- ══ MANIFESTO ══ -->
+<section class="manifesto-section">
+  <div class="manifesto-inner">
+    <div class="section-label" style="color:rgba(0,0,0,0.5);">The HBR Manifesto</div>
+    <p class="manifesto-text">"The honey badger doesn't ask for funding. It doesn't wait for the right credentials. It simply attacks the problem until the problem gives up."</p>
+    <ul class="manifesto-lines">
+      <li class="manifesto-line">You don't need an institution. You need a system.</li>
+      <li class="manifesto-line">You don't need funding. You need relentless output.</li>
+      <li class="manifesto-line">You don't need permission. You need documentation.</li>
+      <li class="manifesto-line">Setbacks are not stop signs — they are venom resistance training.</li>
+      <li class="manifesto-line">The world indexes what you produce, not what you were given.</li>
+      <li class="manifesto-line">At 50+, with zero balance, you can still create your most important work.</li>
+      <li class="manifesto-line">One person, one laptop, one framework — can change how the world thinks.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══ FOR YOU ══ -->
+<section class="foryou-section" id="foryou">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div class="section-label reveal">This Page Is For You If…</div>
+    <h2 class="section-title reveal">You've Run Out<br>of Options</h2>
+    <p class="section-intro reveal">HBR was built for people the system wasn't built for.</p>
+    <div class="audience-grid reveal">
+      <div class="audience-card">
+        <div class="audience-icon">🔬</div>
+        <div class="audience-title">The Lone Researcher</div>
+        <p class="audience-desc">You have ideas that exceed your access. No affiliation, no grant, no lab. You've been told your work "doesn't count" without a university stamp. This framework is your proof-of-concept.</p>
+      </div>
+      <div class="audience-card">
+        <div class="audience-icon">💡</div>
+        <div class="audience-title">The Blocked Innovator</div>
+        <p class="audience-desc">You see solutions others don't. But every door — funding bodies, publishers, institutions — remains closed. HBR shows how to build credibility from the outside, one documented win at a time.</p>
+      </div>
+      <div class="audience-card">
+        <div class="audience-icon">🌱</div>
+        <div class="audience-title">The Late Starter</div>
+        <p class="audience-desc">You're 40, 50, 60 — and feel it's too late. Society has already decided where you fit. This page exists to show that the most fearless animal on earth doesn't retire. It just keeps going.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ LIVE PROJECTS ══ -->
+<section class="projects-section" id="projects">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div class="section-label reveal">Live Projects</div>
+    <h2 class="section-title reveal">Explore the<br>Full Universe</h2>
+    <div class="projects-grid reveal">
+      <a href="https://helixoriginator.github.io/World-Largest-Independent-Digital-Encyclopedia-Helix-Library/" target="_blank" class="project-card">
+        <div class="project-cat">Encyclopedia</div>
+        <div class="project-title">Helix Library</div>
+        <p class="project-desc">The world's largest independent digital encyclopedia built by a single researcher — a living archive of original thought beyond institutional walls.</p>
+        <div class="project-link">Visit →</div>
+      </a>
+      <a href="https://helixoriginator.github.io/helix-wave-framework/" target="_blank" class="project-card">
+        <div class="project-cat">Methodology</div>
+        <div class="project-title">Helix Wave Framework</div>
+        <p class="project-desc">A 4-step intellectual engine — observe, create, disseminate, reflect — that transforms adversity into structured, globally shareable knowledge.</p>
+        <div class="project-link">Visit →</div>
+      </a>
+      <a href="https://helixoriginator.github.io/Pioneer-Frameworks-Kallol-Chakrabarti/" target="_blank" class="project-card">
+        <div class="project-cat">Recognition</div>
+        <div class="project-title">Pioneer Frameworks</div>
+        <p class="project-desc">A dedicated showcase of pioneering frameworks by Kallol Chakrabarti — documenting the breadth and originality of independently created, globally recognised work.</p>
+        <div class="project-link">Visit →</div>
+      </a>
+      <a href="https://sovereign-india.netlify.app/" target="_blank" class="project-card">
+        <div class="project-cat">Governance</div>
+        <div class="project-title">Sovereign India</div>
+        <p class="project-desc">An independent policy vision for India's sovereign future — redefining governance from the ground up without the filter of institutional consensus.</p>
+        <div class="project-link">Visit →</div>
+      </a>
+      <a href="https://national-knowledge-architecture.netlify.app/" target="_blank" class="project-card">
+        <div class="project-cat">Knowledge Systems</div>
+        <div class="project-title">National Knowledge Architecture</div>
+        <p class="project-desc">A blueprint for structuring India's collective intelligence — proposing how a nation's knowledge should be organised, preserved, and made actionable.</p>
+        <div class="project-link">Visit →</div>
+      </a>
+      <a href="https://orcid.org/0009-0007-4971-8936" target="_blank" class="project-card">
+        <div class="project-cat">Researcher Identity</div>
+        <div class="project-title">ORCID Profile</div>
+        <p class="project-desc">Verified researcher identity — 256+ DOI-linked publications, 5,000+ downloads, 25 copyrights. The permanent, citable record of an independent body of work.</p>
+        <div class="project-link">0009-0007-4971-8936 →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-title">Kallol Chakrabarti</div>
+      <div class="footer-sub">Helix Originator · Docu Helix · Independent Researcher · Lucknow, India</div>
+    </div>
+    <div class="footer-links">
+      <a href="https://orcid.org/0009-0007-4971-8936" target="_blank">ORCID: 0009-0007-4971-8936</a>
+      <a href="https://helixoriginator.github.io/World-Largest-Independent-Digital-Encyclopedia-Helix-Library/" target="_blank">Helix Library</a>
+      <a href="https://helixoriginator.github.io/helix-wave-framework/" target="_blank">Helix Wave Framework</a>
+      <a href="https://helixoriginator.github.io/Pioneer-Frameworks-Kallol-Chakrabarti/" target="_blank">Pioneer Frameworks</a>
+      <a href="https://sovereign-india.netlify.app/" target="_blank">Sovereign India</a>
+      <a href="https://national-knowledge-architecture.netlify.app/" target="_blank">National Knowledge Architecture</a>
+    </div>
+  </div>
+  <div class="footer-inner">
+    <div class="footer-copy">
+      Built with no institution, no funding, and no permission — exactly as it should be.
+      Honey Badger Resilience (HBR) · A Kallol Chakrabarti Framework · Open for the world.
     </div>
   </div>
 </footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
